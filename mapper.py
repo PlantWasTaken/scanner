@@ -77,7 +77,7 @@ print("Workijng...")
 data = get_data()
 
 for i in data:
-    xyz_plot = xyzPlot(i[0], i[1], i[2],4) #len z x
+    xyz_plot = xyzPlot(float(i[0]), float(i[1]), float(i[2]),4) #len z x
     X.append(xyz_plot[0])
     Y.append(xyz_plot[1])
     Z.append(xyz_plot[2])

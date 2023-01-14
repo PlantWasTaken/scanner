@@ -1,4 +1,3 @@
-import serial
 import time as t
 import math as m
 
@@ -11,15 +10,15 @@ def get_data():
         if(i == '\n'):
             pass
         else:
-            n.append(float(i))
+            n.append(i.split())
 
-    l = [n[i:i + 3] for i in range(0, len(n), 3)]
-    for i in range(len(l)):
-        l[i][1] = l[i][1]*step*m.pi/180
-        l[i][2] = l[i][2]*step*m.pi*3/180
+    #l = [n[i:i + 3] for i in range(0, len(n), 3)]
+    for i in range(len(n)):
+        n[i][1] = float(n[i][1])*step*m.pi/180
+        n[i][2] = float(n[i][2])*step*m.pi*3/180
 
-    l.pop()
-    print(l[1:10])
-    return l
+    n.pop()
+    print(n[1:10])
+    return n
 
 #get_data()
